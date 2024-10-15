@@ -41,24 +41,13 @@ android {
     buildFeatures {
         viewBinding true
     }
-    signingConfigs {
-        release {
-            storeFile file('../keystore')
-            storePassword System.env.KEYSTORE_PSWD
-            keyAlias System.env.KEYSTORE_ALIAS
-            keyPassword System.env.KEYSTORE_KEY_PSWD
-        }
-    }
+
     buildTypes {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        release {
-            minifyEnabled true
-            signingConfig signingConfigs.release
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+
     }
     namespace 'no.nordicsemi.android.nrfmesh'
 }
@@ -91,8 +80,7 @@ dependencies {
 
     annotationProcessor "com.google.dagger:hilt-android-compiler:$hilt_version"
     annotationProcessor 'androidx.hilt:hilt-compiler:1.0.0'
-
-    implementation project(':mesh')
+    implementation 'no.nordicsemi.android:mesh:3.3.4'
 }
 repositories {
     mavenCentral()
