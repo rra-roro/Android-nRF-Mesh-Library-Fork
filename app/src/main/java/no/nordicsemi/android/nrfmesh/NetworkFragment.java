@@ -122,7 +122,10 @@ public class NetworkFragment extends Fragment implements
             }
         });
 
+
         fab.setOnClickListener(v -> {
+            int abc = 101;
+            System.out.println("KHS test" + abc);
             final Intent intent = new Intent(requireContext(), ScannerActivity.class);
             intent.putExtra(Utils.EXTRA_DATA_PROVISIONING_SERVICE, true);
             provisioner.launch(intent);
