@@ -5,4 +5,8 @@
 .DS_Store
 build/
 /captures
-.externalNativeBuild
+.externalNativeBuild/caches
+/wrapper
+/native
+/daemon
+/android
